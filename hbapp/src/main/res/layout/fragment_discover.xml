@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_Toolbar_dis"
+        android:layout_width="match_parent"
+        android:layout_height="38dp">
+
+        <ImageView
+            android:id="@+id/iv_tb_dis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/menu" />
+        <TextView
+            android:id="@+id/tv_tb_dis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="发现"
+            android:layout_gravity="center" />
+
+        <SearchView
+            android:id="@+id/sv_tb_dis"
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tv_line_top_dis"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/tb_Toolbar_dis"
+        android:background="#bbbbbb" />
+
+    <com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_below="@id/tv_line_top_dis"
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        app:srl_direction="both"
+       >
+        <com.qianfeng.haibei.hbapp.widget.GridViewWithHeaderAndFooter
+            android:id="@+id/gv_dis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="2">
+        </com.qianfeng.haibei.hbapp.widget.GridViewWithHeaderAndFooter>
+
+    </com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>
+
+</RelativeLayout>
